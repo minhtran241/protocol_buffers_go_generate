@@ -43,12 +43,12 @@ Summary of the packages provided by this module:
 
     -   After defining and creating Protocol Buffers messages, we need to be able to exchange these messages.
 
-## Example Client-Server TCP connection
+## Example Client-Server TCP Connection
 
 ### Package index
 
 -   [`flag`](https://pkg.go.dev/flag flag): Package
-    `flag` implements command-line flag parsing: `admin -client` and `admin -server`
+    `flag` implements command-line flag parsing: `-admin client` and `-admin server`
 
 -   [`ioutil`](https://pkg.go.dev/io/ioutil io/ioutil):
     Package `ioutil` implements some I/O utility functions.
@@ -56,13 +56,18 @@ Summary of the packages provided by this module:
 -   [`net`](https://pkg.go.dev/net net):
     Package `net` provides a portable interface for network I/O, including TCP/IP, UDP, domain name resolution, and Unix domain sockets. Although the package provides access to low-level networking primitives, most clients will need only the basic interface provided by the Dial, Listen, and Accept functions and the associated Conn and Listener interfaces. The crypto/tls package uses the same interfaces and similar Dial and Listen functions.
 
-### Explanation
+### Logic Explanation
 
--   Send protocol message CML: `go run ./main.go admin -client`
--   Listen to protocol message CML: `go run ./main.go admin -server`
+-   Send protocol message CML: `go run ./main.go -admin client`
+-   Listen to protocol message CML: `go run ./main.go -admin server`
 -   Server listens on `tcp`, `127.0.0.1:8085`
 -   `sendData()` uses `net.Dial("tcp", "127.0.0.1:8085")` to create a TCP connection between the server and the client. Function receives `data []byte` parameter and writes it to the connection it created before
 -   `runClient()` creates a protocol object and uses `proto.Marshal(&object)` to marshal the protocol object before sending it to the connection by calling `sendData()`.
 -   `runServer` uses `net.Listen("tcp", "127.0.0.1:8085")` to listen on TCP. Function waits for reading data from the connection by using `ioutil.ReadAll(connection)` and then unmarshal the data received by `proto.Unmarshal(data, object)`
 -   Demo
+
     <img src="./client_server.png">
+
+## Contributor
+
+-   Minh Tran (Me)
