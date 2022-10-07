@@ -1,7 +1,7 @@
 # Instruction for Generating Go Protocol Buffers
 
-The module ([`github.com/golang/Protocol Buffers`](https://pkg.go.dev/mod/github.com/golang/Protocol Buffers))
-contains Go bindings for protocol buffers.
+The module ([`github.com/golang/protobuf`](https://pkg.go.dev/mod/github.com/golang/protobuf))
+contains Go bindings for Protocol Buffers.
 
 The documentation and tutorials by Google can be found at [`Protocol Buffers Go tutorials`](https://developers.google.com/protocol-buffers/docs/gotutorial)
 
@@ -9,17 +9,16 @@ The documentation and tutorials by Google can be found at [`Protocol Buffers Go 
 
 Summary of the packages provided by this module:
 
--   [`proto`](https://pkg.go.dev/github.com/golang/Protocol Buffers/proto): Package
+-   [`proto`](https://pkg.go.dev/github.com/golang/protobuf/proto): Package
     `proto` provides functions operating on Protocol Buffers messages such as cloning,
     merging, and checking equality, as well as binary serialization and text
     serialization.
 
--   [`protoc-gen-go/plugin`](https://pkg.go.dev/github.com/golang/Protocol Buffers/protoc-gen-go/plugin):
+-   [`protoc-gen-go/plugin`](https://pkg.go.dev/github.com/golang/protobuf/protoc-gen-go/plugin):
     Package `plugin` is the generated package for
-    `google/Protocol Buffers/compiler/plugin.proto`.
--   [`protoc-gen-go`](https://pkg.go.dev/github.com/golang/Protocol Buffers/protoc-gen-go):
-    The `protoc-gen-go` binary is a protoc plugin to generate a Go protocol
-    buffer package.
+    `google/protobuf/compiler/plugin.proto`.
+-   [`protoc-gen-go`](https://pkg.go.dev/github.com/golang/protobuf/protoc-gen-go):
+    The `protoc-gen-go` binary is a protoc plugin to generate a Go Protocol Buffers package.
 
 ## How do we use Protocol Buffers?
 
@@ -33,10 +32,10 @@ Summary of the packages provided by this module:
 
     -   Messages definitions are not enough to represent and exchange data in any programming language. We have to generate classes/objects to deal with data in the chosen programming language.
     -   To install the compiler, download packages:
-        -   `go get -u google.golang.org/Protocol Buffers`
-        -   `go get -u google.golang.org/Protocol Buffers/proto`
+        -   `go get -u google.golang.org/protobuf`
+        -   `go get -u google.golang.org/protobuf/proto`
     -   To install the Go protocol buffers plugin:
-        -   `go install google.golang.org/Protocol Buffers/cmd/protoc-gen-go@latest`
+        -   `go install google.golang.org/protobuf/cmd/protoc-gen-go@latest`
     -   To compile:
         -   `protoc --go_out=. ./protocol/*.proto`
 
