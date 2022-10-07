@@ -47,13 +47,13 @@ Summary of the packages provided by this module:
 
 ### Package index
 
--   [`flag`](https://pkg.go.dev/flag flag): Package
+-   [`flag`](https://pkg.go.dev/flag): Package
     `flag` implements command-line flag parsing: `-admin client` and `-admin server`
 
--   [`ioutil`](https://pkg.go.dev/io/ioutil io/ioutil):
+-   [`io/ioutil`](https://pkg.go.dev/io/ioutil):
     Package `ioutil` implements some I/O utility functions.
 
--   [`net`](https://pkg.go.dev/net net):
+-   [`net`](https://pkg.go.dev/net):
     Package `net` provides a portable interface for network I/O, including TCP/IP, UDP, domain name resolution, and Unix domain sockets. Although the package provides access to low-level networking primitives, most clients will need only the basic interface provided by the Dial, Listen, and Accept functions and the associated Conn and Listener interfaces. The crypto/tls package uses the same interfaces and similar Dial and Listen functions.
 
 ### Logic Explanation
