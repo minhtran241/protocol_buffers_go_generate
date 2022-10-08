@@ -24,24 +24,24 @@ Summary of the packages provided by this module:
 
 -   Protocol Buffers is faster than JSON and has 3 main components that we have to deal with:
 
-*   Message Descriptors
+    -   Message Descriptors
 
-    -   When using Protocol Buffers we have to define our own messages structure in `.proto` files.
+        -   When using Protocol Buffers we have to define our own messages structure in `.proto` files.
 
-*   Message Implementations
+    -   Message Implementations
 
-    -   Messages definitions are not enough to represent and exchange data in any programming language. We have to generate classes/objects to deal with data in the chosen programming language.
-    -   To install the compiler, download packages:
-        -   `go get -u google.golang.org/protobuf`
-        -   `go get -u google.golang.org/protobuf/proto`
-    -   To install the Go protocol buffers plugin:
-        -   `go install google.golang.org/protobuf/cmd/protoc-gen-go@latest`
-    -   To compile:
-        -   `protoc --go_out=. ./protocol/*.proto`
+        -   Messages definitions are not enough to represent and exchange data in any programming language. We have to generate classes/objects to deal with data in the chosen programming language.
+        -   To install the compiler, download packages:
+            -   `go get -u google.golang.org/protobuf`
+            -   `go get -u google.golang.org/protobuf/proto`
+        -   To install the Go protocol buffers plugin:
+            -   `go install google.golang.org/protobuf/cmd/protoc-gen-go@latest`
+        -   To compile:
+            -   `protoc --go_out=. ./protocol/*.proto`
 
-*   Parsing and Serialization
+    -   Parsing and Serialization
 
-    -   After defining and creating Protocol Buffers messages, we need to be able to exchange these messages.
+        -   After defining and creating Protocol Buffers messages, we need to be able to exchange these messages.
 
 ## Example Client-Server TCP Connection
 
